@@ -1,14 +1,14 @@
 Metasouk est une application de e-commerce innovante dédiée à l’achat et la vente de NFTs. 
 Elle propose un écosystème complet avec gestion des utilisateurs (visiteur, client, vendeur, administrateur), panier d'achat, évaluations et signalements de produits, ainsi qu’une interface d’administration performante.
 
-Fonctionnement Général
-1.Visiteur
+## Fonctionnement Général
+### Visiteur
 -Le visiteur accède au site Metasouk sans authentification.
 -Il peut parcourir la liste des NFTs disponibles.
 -Il peut ajouter des produits à son panier temporaire.
 -Lorsqu’il souhaite passer au paiement, il est redirigé vers la page d’inscription.
 
-2.Client(après inscription)
+### Client(après inscription)
 -L'utilisateur s’inscrit pour devenir client.
 Il peut désormais :
 -Gérer son panier (ajout/retrait de NFTs).
@@ -18,7 +18,7 @@ Il peut désormais :
 -Supprimer son compte définitivement : Un email de confirmation de suppression est automatiquement envoyé.
 -Il peut cliquer sur le bouton "Became seller" : Une demande est envoyée à l’administrateur pour validation.
 
-3.Vendeur(après validation par l'administrateur)
+### Vendeur(après validation par l'administrateur)
 -Si le client est accepté en tant que vendeur :
 Un email de confirmation est envoyé et son statut est mis à jour à vendeur.
 Le bouton "Devenir vendeur" est remplacé par "Seller's sapce".
@@ -29,7 +29,7 @@ Le bouton "Devenir vendeur" est remplacé par "Seller's sapce".
 -Accéder à son tableau de bord personnel de ventes.
 -Continuer d'utiliser les fonctionnalités client (panier, commentaires, etc.).
 
-4.Administrateur
+### Administrateur
 -L’administrateur se connecte avec :
 Username: admin
 Mot de passe : admin123
@@ -52,33 +52,40 @@ Pour cela, une méthode personnalisée save convertit automatiquement l’image 
 Si l’hébergement de l’application Metasouk ne fonctionne pas, 
 voici les etapes afin de l'executer localement :
 
-1.Prérequis:
-Python 3.8
-django
-pip
-Git
-MySQL (Wampserver)
+## Lancer le Projet en Local
+### Prérequis:
+Python 3.8  
+django  
+pip  
+Git  
+MySQL     
 
-2.Cloner le projet: 
+### Étapes
+1.Cloner le projet: 
+```bash
 git clone https://github.com/votre-utilisateur/metasouk.git
 cd nft
-
-3.Créer et activer un environnement virtuel: 
+```
+2.Créer et activer un environnement virtuel: 
+```bash
 python -m venv env
 source env\Scripts\activate
-
-4.Installer les dépendances:
+```
+3.Installer les dépendances:
+```bash
 pip install -r requirements.txt
+```
+4.Configurer la base de données : charger le script .sql dans la base de données MYSQL 
 
-5.Configurer la base de données : charger le script .sql dans la base de données MYSQL 
-
-6.Appliquer les migrations:
+5.Appliquer les migrations:
+```bash
 python manage.py makemigrations
 python manage.py migrate
-
-7.Lancer le serveur de développement : 
+```
+6.Lancer le serveur de développement : 
+```bash
 python manage.py runserver
-
+```
 Important :
 Assurez-vous de vous positionner dans le dossier racine du projet où se trouve le fichier manage.py avant d’exécuter les commandes ci-dessus.
 Ce fichier est essentiel pour lancer et gérer l’application Django.
